@@ -13,7 +13,7 @@ module AASM
       #
       # Adds
       #
-      #   before_validation_on_create :aasm_ensure_initial_state
+      #   before_validation :aasm_ensure_initial_state, :on => :create
       #
       # As a result, it doesn't matter when you define your methods - the following 2 are equivalent
       #
@@ -51,7 +51,7 @@ module AASM
           end
         end
 
-        base.before_validation_on_create :aasm_ensure_initial_state
+        base.before_validation :aasm_ensure_initial_state, :on => :create
       end
 
       module ClassMethods
